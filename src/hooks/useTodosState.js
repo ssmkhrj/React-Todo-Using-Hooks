@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 function useTodosState(initialValue) {
   const [todos, setTodos] = useLocalStorageState("todos", initialValue);
   const addNewTodo = (newTodo) => {
-    setTodos([...todos, { text: newTodo, id: uuidv4() }]);
+    setTodos([...todos, { text: newTodo, id: uuidv4(), isCompleted: false }]);
   };
   const updateTodo = (todoId, todoText) => {
     setTodos(
